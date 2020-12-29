@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Users.Business.Models;
 using System.Linq;
+using Users.Business.Models;
 
 namespace Users.Data.Context
 {
@@ -8,7 +8,6 @@ namespace Users.Data.Context
     {
         public UsersContext(DbContextOptions options) : base(options)
         {
-
         }
 
         public DbSet<User> Users { get; set; }

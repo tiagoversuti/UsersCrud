@@ -22,7 +22,7 @@ namespace Users.UnitTests.Business.Services
         public UserServiceTest()
         {
             _repository = Substitute.For<IUserRepository>();
-            
+
             _service = new UserService(_repository);
         }
 

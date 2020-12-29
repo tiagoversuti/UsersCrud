@@ -34,7 +34,7 @@ namespace Users.Business.Services
         public List<UserDto> GetAll()
         {
             var users = _repository.GetAll();
-            
+
             return users.Select(u => new UserDto
             {
                 Id = u.Id,

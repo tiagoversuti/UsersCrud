@@ -17,6 +17,7 @@ namespace Users.Data.Repositories
         {
             _context = context;
         }
+
         public void Add(User user)
         {
             _context.Add(user);
