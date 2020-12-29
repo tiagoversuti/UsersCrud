@@ -1,16 +1,34 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Users.Business.Models
 {
-    public class User
+    public class User : Entity
     {
-        public Guid Id { get; set; }
-        public string Name { get; set; }
-        public string Login { get; set; }
-        public string Password { get; set; }
+        public User(Guid id, string name, string login, string password)
+        {
+            Id = id;
+            Name = name;
+            Login = login;
+            Password = password;
+        }
+
+        public string Name { get; private set; }
+        public string Login { get; private set; }
+        public string Password { get; private set; }
+
+        public bool ValidatePassword(string password)
+        {
+            return Hash.Verify(password, Password);
+        }
+
+        public void ChangePassword(string newPassword)
+        {
+            Password = Hash.Generate(newPassword);
+        }
+
+        public void ChangeName(string name)
+        {
+            Name = name;
+        }
     }
 }
