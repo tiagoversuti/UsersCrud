@@ -168,7 +168,7 @@ namespace Users.UnitTests.Business.Services
                 NewPasswordConfirm = "NewPasswordWrong"
             };
 
-            _repository.GetById(Arg.Is(id)).Returns(new User(id, "Name", "Login", "$2a$12$LzA4TO2jjgYypiUUluvGqO/PtDDHlmbm9GJNcm6hTBVx6.FZzHY12"));
+            _repository.GetById(Arg.Is(id)).Returns(new User(id, "Name", "Login", "Password"));
 
             //Act
             Action action = () => _service.Update(userDto);
@@ -193,7 +193,7 @@ namespace Users.UnitTests.Business.Services
                 NewPasswordConfirm = "NewPassword"
             };
 
-            _repository.GetById(Arg.Is(id)).Returns(new User(id, "Name", "Login", "$2a$12$LzA4TO2jjgYypiUUluvGqO/PtDDHlmbm9GJNcm6hTBVx6.FZzHY12"));
+            _repository.GetById(Arg.Is(id)).Returns(new User(id, "Name", "Login", "Password"));
 
             //Act
             Action action = () => _service.Update(userDto);
@@ -218,7 +218,7 @@ namespace Users.UnitTests.Business.Services
                 NewPasswordConfirm = "NewPassword"
             };
 
-            _repository.GetById(Arg.Is(id)).Returns(new User(id, "Name", "Login", "$2a$12$LzA4TO2jjgYypiUUluvGqO/PtDDHlmbm9GJNcm6hTBVx6.FZzHY12"));
+            _repository.GetById(Arg.Is(id)).Returns(new User(id, "Name", "Login", "Password"));
 
             //Act
             var user = _service.Update(userDto);

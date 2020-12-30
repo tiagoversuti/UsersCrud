@@ -13,6 +13,7 @@ namespace Users.Api.Configuration
             services.AddScoped<UsersContext>();
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<IUserService, UserService>();
+            services.AddScoped<ILoginService, LoginService>();
 
             return services;
         }

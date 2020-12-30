@@ -9,7 +9,7 @@ namespace Users.Business.Models
             Id = id;
             Name = name;
             Login = login;
-            Password = password;
+            ChangePassword(password);
         }
 
         public string Name { get; private set; }

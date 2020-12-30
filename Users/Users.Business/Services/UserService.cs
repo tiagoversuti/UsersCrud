@@ -51,7 +51,7 @@ namespace Users.Business.Services
                 throw new ArgumentException("There already exists an user with this name or login.");
             }
 
-            var user = new User(Guid.NewGuid(), userDto.Name, userDto.Login, Hash.Generate(userDto.Password));
+            var user = new User(Guid.NewGuid(), userDto.Name, userDto.Login, userDto.Password);
             _repository.Add(user);
 
             return new UserDto

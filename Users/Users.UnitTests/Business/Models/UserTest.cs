@@ -12,7 +12,7 @@ namespace Users.UnitTests.Business.Models
         public void ValidatePassword_WhenPasswordIsCorrect_ShouldReturnTrue()
         {
             //Arrange
-            var user = new User(Guid.NewGuid(), "Name", "Login", "$2a$12$LzA4TO2jjgYypiUUluvGqO/PtDDHlmbm9GJNcm6hTBVx6.FZzHY12");
+            var user = new User(Guid.NewGuid(), "Name", "Login", "Password");
             var password = "Password";
 
             //Act
@@ -26,7 +26,7 @@ namespace Users.UnitTests.Business.Models
         public void ValidatePassword_WhenPasswordIsIncorrect_ShouldReturnFalse()
         {
             //Arrange
-            var user = new User(Guid.NewGuid(), "Name", "Login", "$2a$12$LzA4TO2jjgYypiUUluvGqO/PtDDHlmbm9GJNcm6hTBVx6.FZzHY12");
+            var user = new User(Guid.NewGuid(), "Name", "Login", "Password");
             var password = "WrongPassword";
 
             //Act
@@ -40,21 +40,22 @@ namespace Users.UnitTests.Business.Models
         public void ChangePassword_ShouldChangePassword()
         {
             //Arrange
-            var user = new User(Guid.NewGuid(), "Name", "Login", "$2a$12$LzA4TO2jjgYypiUUluvGqO/PtDDHlmbm9GJNcm6hTBVx6.FZzHY12");
-            var password = "NewPassword";
+            var user = new User(Guid.NewGuid(), "Name", "Login", "Password");
+            var hashedPassword = user.Password;
+            var newPassword = "NewPassword";
 
             //Act
-            user.ChangePassword(password);
+            user.ChangePassword(newPassword);
 
             //Assert
-            user.Password.Should().NotBe("$2a$12$LzA4TO2jjgYypiUUluvGqO/PtDDHlmbm9GJNcm6hTBVx6.FZzHY12");
+            user.Password.Should().NotBe(hashedPassword);
         }
 
         [TestMethod]
         public void ChangeName_ShouldChangeName()
         {
             //Arrange
-            var user = new User(Guid.NewGuid(), "Name", "Login", "$2a$12$LzA4TO2jjgYypiUUluvGqO/PtDDHlmbm9GJNcm6hTBVx6.FZzHY12");
+            var user = new User(Guid.NewGuid(), "Name", "Login", "Password");
             var name = "New Name";
 
             //Act

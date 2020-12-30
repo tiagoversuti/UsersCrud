@@ -13,6 +13,8 @@ namespace Users.Business.Interfaces
 
         User GetById(Guid id);
 
+        User GetByLogin(string login);
+
         List<User> GetAll();
 
         IEnumerable<User> Search(Expression<Func<User, bool>> predicate);

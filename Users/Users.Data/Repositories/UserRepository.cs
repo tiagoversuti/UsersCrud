@@ -35,6 +35,11 @@ namespace Users.Data.Repositories
             return _context.Users.AsNoTracking().FirstOrDefault(u => u.Id == id);
         }
 
+        public User GetByLogin(string login)
+        {
+            return _context.Users.AsNoTracking().FirstOrDefault(u => u.Login == login);
+        }
+
         public List<User> GetAll()
         {
             return _context.Users.AsNoTracking().ToList();
