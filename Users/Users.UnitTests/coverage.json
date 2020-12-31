@@ -1,0 +1,575 @@
+{
+  "Users.Business.dll": {
+    "C:\\Repos\\UsersCrud\\Users\\Users.Business\\Hash.cs": {
+      "Users.Business.Hash": {
+        "System.Boolean Users.Business.Hash::Verify(System.String,System.String)": {
+          "Lines": {
+            "8": 6,
+            "9": 6,
+            "10": 6
+          },
+          "Branches": []
+        },
+        "System.String Users.Business.Hash::Generate(System.String)": {
+          "Lines": {
+            "13": 19,
+            "14": 19,
+            "15": 19,
+            "16": 19
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Repos\\UsersCrud\\Users\\Users.Business\\Services\\LoginService.cs": {
+      "Users.Business.Services.LoginService": {
+        "System.String Users.Business.Services.LoginService::Authenticate(Users.Business.Contracts.LoginDto)": {
+          "Lines": {
+            "25": 3,
+            "26": 3,
+            "28": 3,
+            "29": 1,
+            "31": 2,
+            "32": 1,
+            "34": 1,
+            "35": 1
+          },
+          "Branches": [
+            {
+              "Line": 28,
+              "Offset": 25,
+              "EndOffset": 27,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 28,
+              "Offset": 25,
+              "EndOffset": 38,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 2
+            },
+            {
+              "Line": 31,
+              "Offset": 55,
+              "EndOffset": 57,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 1
+            },
+            {
+              "Line": 31,
+              "Offset": 55,
+              "EndOffset": 68,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 1
+            }
+          ]
+        },
+        "System.String Users.Business.Services.LoginService::GenerateToken(Users.Business.Models.User)": {
+          "Lines": {
+            "38": 1,
+            "39": 1,
+            "40": 1,
+            "41": 0,
+            "43": 1,
+            "44": 1,
+            "45": 1,
+            "46": 1,
+            "47": 1,
+            "49": 1,
+            "50": 1,
+            "51": 1,
+            "52": 1,
+            "54": 1,
+            "56": 1,
+            "57": 1
+          },
+          "Branches": [
+            {
+              "Line": 40,
+              "Offset": 33,
+              "EndOffset": 35,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 40,
+              "Offset": 33,
+              "EndOffset": 46,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            }
+          ]
+        },
+        "Users.Business.Contracts.UserDto Users.Business.Services.LoginService::ValidateToken(System.String)": {
+          "Lines": {
+            "60": 0,
+            "61": 0,
+            "62": 0,
+            "63": 0,
+            "66": 0,
+            "67": 0,
+            "68": 0,
+            "69": 0,
+            "73": 0,
+            "74": 0,
+            "75": 0,
+            "76": 0,
+            "77": 0,
+            "78": 0,
+            "79": 0,
+            "81": 0,
+            "83": 0,
+            "84": 0,
+            "86": 0,
+            "88": 0,
+            "89": 0,
+            "91": 0,
+            "92": 0,
+            "93": 0,
+            "94": 0,
+            "95": 0,
+            "96": 0,
+            "98": 0,
+            "99": 0,
+            "100": 0,
+            "102": 0
+          },
+          "Branches": [
+            {
+              "Line": 61,
+              "Offset": 9,
+              "EndOffset": 11,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 61,
+              "Offset": 9,
+              "EndOffset": 19,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            },
+            {
+              "Line": 67,
+              "Offset": 49,
+              "EndOffset": 51,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 67,
+              "Offset": 49,
+              "EndOffset": 63,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 0
+            },
+            {
+              "Line": 88,
+              "Offset": 207,
+              "EndOffset": 209,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 0
+            },
+            {
+              "Line": 88,
+              "Offset": 207,
+              "EndOffset": 213,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 0
+            }
+          ]
+        },
+        "System.Void Users.Business.Services.LoginService::.ctor(Microsoft.Extensions.Configuration.IConfiguration,Users.Business.Interfaces.IUserRepository)": {
+          "Lines": {
+            "18": 3,
+            "19": 3,
+            "20": 3,
+            "21": 3,
+            "22": 3
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Repos\\UsersCrud\\Users\\Users.Business\\Services\\UserService.cs": {
+      "Users.Business.Services.UserService": {
+        "Users.Business.Contracts.UserDto Users.Business.Services.UserService::GetById(System.Guid)": {
+          "Lines": {
+            "20": 2,
+            "21": 2,
+            "23": 2,
+            "24": 1,
+            "26": 1,
+            "27": 1,
+            "28": 1,
+            "29": 1,
+            "30": 1,
+            "31": 1,
+            "32": 1
+          },
+          "Branches": [
+            {
+              "Line": 23,
+              "Offset": 20,
+              "EndOffset": 22,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 23,
+              "Offset": 20,
+              "EndOffset": 33,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            }
+          ]
+        },
+        "System.Collections.Generic.List`1<Users.Business.Contracts.UserDto> Users.Business.Services.UserService::GetAll()": {
+          "Lines": {
+            "35": 1,
+            "36": 1,
+            "38": 3,
+            "39": 3,
+            "40": 3,
+            "41": 3,
+            "42": 3,
+            "43": 3,
+            "44": 1
+          },
+          "Branches": []
+        },
+        "Users.Business.Contracts.UserDto Users.Business.Services.UserService::Create(Users.Business.Contracts.UserCreateDto)": {
+          "Lines": {
+            "47": 2,
+            "48": 2,
+            "49": 2,
+            "50": 1,
+            "51": 1,
+            "54": 1,
+            "55": 1,
+            "57": 1,
+            "58": 1,
+            "59": 1,
+            "60": 1,
+            "61": 1,
+            "62": 1,
+            "63": 1
+          },
+          "Branches": [
+            {
+              "Line": 48,
+              "Offset": 227,
+              "EndOffset": 229,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 48,
+              "Offset": 227,
+              "EndOffset": 241,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            }
+          ]
+        },
+        "Users.Business.Contracts.UserDto Users.Business.Services.UserService::Update(Users.Business.Contracts.UserEditDto)": {
+          "Lines": {
+            "66": 4,
+            "67": 4,
+            "69": 4,
+            "70": 1,
+            "72": 3,
+            "73": 1,
+            "75": 2,
+            "76": 1,
+            "78": 1,
+            "79": 1,
+            "81": 1,
+            "83": 1,
+            "84": 1,
+            "85": 1,
+            "86": 1,
+            "87": 1,
+            "88": 1,
+            "89": 1
+          },
+          "Branches": [
+            {
+              "Line": 69,
+              "Offset": 25,
+              "EndOffset": 27,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 69,
+              "Offset": 25,
+              "EndOffset": 38,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 3
+            },
+            {
+              "Line": 72,
+              "Offset": 57,
+              "EndOffset": 59,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 1
+            },
+            {
+              "Line": 72,
+              "Offset": 57,
+              "EndOffset": 70,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 2
+            },
+            {
+              "Line": 75,
+              "Offset": 87,
+              "EndOffset": 89,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 1
+            },
+            {
+              "Line": 75,
+              "Offset": 87,
+              "EndOffset": 100,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 1
+            }
+          ]
+        },
+        "System.Void Users.Business.Services.UserService::Delete(System.Guid)": {
+          "Lines": {
+            "92": 2,
+            "93": 2,
+            "95": 2,
+            "96": 1,
+            "98": 1,
+            "99": 1
+          },
+          "Branches": [
+            {
+              "Line": 95,
+              "Offset": 20,
+              "EndOffset": 22,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 95,
+              "Offset": 20,
+              "EndOffset": 33,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            }
+          ]
+        },
+        "System.Void Users.Business.Services.UserService::.ctor(Users.Business.Interfaces.IUserRepository)": {
+          "Lines": {
+            "14": 11,
+            "15": 11,
+            "16": 11,
+            "17": 11
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Repos\\UsersCrud\\Users\\Users.Business\\Models\\Entity.cs": {
+      "Users.Business.Models.Entity": {
+        "System.Guid Users.Business.Models.Entity::get_Id()": {
+          "Lines": {
+            "12": 40
+          },
+          "Branches": []
+        },
+        "System.Void Users.Business.Models.Entity::.ctor()": {
+          "Lines": {
+            "7": 17,
+            "8": 17,
+            "9": 17,
+            "10": 17
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Repos\\UsersCrud\\Users\\Users.Business\\Models\\User.cs": {
+      "Users.Business.Models.User": {
+        "System.String Users.Business.Models.User::get_Name()": {
+          "Lines": {
+            "15": 25
+          },
+          "Branches": []
+        },
+        "System.String Users.Business.Models.User::get_Login()": {
+          "Lines": {
+            "16": 23
+          },
+          "Branches": []
+        },
+        "System.String Users.Business.Models.User::get_Password()": {
+          "Lines": {
+            "17": 27
+          },
+          "Branches": []
+        },
+        "System.Boolean Users.Business.Models.User::ValidatePassword(System.String)": {
+          "Lines": {
+            "20": 6,
+            "21": 6,
+            "22": 6
+          },
+          "Branches": []
+        },
+        "System.Void Users.Business.Models.User::ChangePassword(System.String)": {
+          "Lines": {
+            "25": 19,
+            "26": 19,
+            "27": 19
+          },
+          "Branches": []
+        },
+        "System.Void Users.Business.Models.User::ChangeName(System.String)": {
+          "Lines": {
+            "30": 2,
+            "31": 2,
+            "32": 2
+          },
+          "Branches": []
+        },
+        "System.Void Users.Business.Models.User::.ctor(System.Guid,System.String,System.String,System.String)": {
+          "Lines": {
+            "7": 17,
+            "8": 17,
+            "9": 17,
+            "10": 17,
+            "11": 17,
+            "12": 17,
+            "13": 17
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Repos\\UsersCrud\\Users\\Users.Business\\Contracts\\LoginDto.cs": {
+      "Users.Business.Contracts.LoginDto": {
+        "System.String Users.Business.Contracts.LoginDto::get_Login()": {
+          "Lines": {
+            "5": 6
+          },
+          "Branches": []
+        },
+        "System.String Users.Business.Contracts.LoginDto::get_Password()": {
+          "Lines": {
+            "6": 5
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Repos\\UsersCrud\\Users\\Users.Business\\Contracts\\UserCreateDto.cs": {
+      "Users.Business.Contracts.UserCreateDto": {
+        "System.String Users.Business.Contracts.UserCreateDto::get_Name()": {
+          "Lines": {
+            "5": 3
+          },
+          "Branches": []
+        },
+        "System.String Users.Business.Contracts.UserCreateDto::get_Login()": {
+          "Lines": {
+            "6": 3
+          },
+          "Branches": []
+        },
+        "System.String Users.Business.Contracts.UserCreateDto::get_Password()": {
+          "Lines": {
+            "7": 3
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Repos\\UsersCrud\\Users\\Users.Business\\Contracts\\UserDto.cs": {
+      "Users.Business.Contracts.UserDto": {
+        "System.Guid Users.Business.Contracts.UserDto::get_Id()": {
+          "Lines": {
+            "7": 6
+          },
+          "Branches": []
+        },
+        "System.String Users.Business.Contracts.UserDto::get_Name()": {
+          "Lines": {
+            "8": 10
+          },
+          "Branches": []
+        },
+        "System.String Users.Business.Contracts.UserDto::get_Login()": {
+          "Lines": {
+            "9": 10
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Repos\\UsersCrud\\Users\\Users.Business\\Contracts\\UserEditDto.cs": {
+      "Users.Business.Contracts.UserEditDto": {
+        "System.Guid Users.Business.Contracts.UserEditDto::get_Id()": {
+          "Lines": {
+            "7": 8
+          },
+          "Branches": []
+        },
+        "System.String Users.Business.Contracts.UserEditDto::get_Name()": {
+          "Lines": {
+            "8": 5
+          },
+          "Branches": []
+        },
+        "System.String Users.Business.Contracts.UserEditDto::get_OldPassword()": {
+          "Lines": {
+            "9": 6
+          },
+          "Branches": []
+        },
+        "System.String Users.Business.Contracts.UserEditDto::get_NewPassword()": {
+          "Lines": {
+            "10": 8
+          },
+          "Branches": []
+        },
+        "System.String Users.Business.Contracts.UserEditDto::get_NewPasswordConfirm()": {
+          "Lines": {
+            "11": 7
+          },
+          "Branches": []
+        }
+      }
+    }
+  }
+}
