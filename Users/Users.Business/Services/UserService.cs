@@ -7,11 +7,11 @@ using Users.Business.Models;
 
 namespace Users.Business.Services
 {
-    public class UserService : IUserService
+    public class UserService : BaseService, IUserService
     {
         private readonly IUserRepository _repository;
 
-        public UserService(IUserRepository repository)
+        public UserService(IUserRepository repository, INotifier notifier) : base(notifier)
         {
             _repository = repository;
         }
@@ -21,7 +21,10 @@ namespace Users.Business.Services
             var user = _repository.GetById(id);
 
             if (user is null)
-                throw new ArgumentException("User not found.");
+            {
+                Notify("User not found.");
+                return null;
+            }
 
             return new UserDto
             {
@@ -48,10 +51,11 @@ namespace Users.Business.Services
             if (_repository.Search(u => u.Name == userDto.Name || u.Login == userDto.Login)
                 .Any())
             {
-                throw new ArgumentException("There already exists an user with this name or login.");
+                Notify("There already exists an user with this name or login.");
+                return null;
             }
 
-            var user = new User(Guid.NewGuid(), userDto.Name, userDto.Login, userDto.Password);
+            var user = new User(Guid.NewGuid(), userDto.Name, userDto.Login, Hash.Generate(userDto.Password));
             _repository.Add(user);
 
             return new UserDto
@@ -67,13 +71,22 @@ namespace Users.Business.Services
             var user = _repository.GetById(userDto.Id);
 
             if (user is null)
-                throw new ArgumentException("No user found with this id.");
+            {
+                Notify("No user found with this id.");
+                return null;
+            }
 
             if (userDto.NewPassword != userDto.NewPasswordConfirm)
-                throw new ArgumentException("The new password confirmation is different than the new password");
+            {
+                Notify("The new password confirmation is different than the new password.");
+                return null;
+            }
 
             if (!user.ValidatePassword(userDto.OldPassword))
-                throw new ArgumentException("The old password is wrong.");
+            {
+                Notify("The old password is wrong.");
+                return null;
+            }
 
             user.ChangeName(userDto.Name);
             user.ChangePassword(userDto.NewPassword);
@@ -93,9 +106,11 @@ namespace Users.Business.Services
             var user = _repository.GetById(id);
 
             if (user is null)
-                throw new ArgumentException("User not found.");
-
-            _repository.Delete(user);
+            {
+                Notify("User not found.");
+            }
+            else
+                _repository.Delete(user);
         }
     }
 }

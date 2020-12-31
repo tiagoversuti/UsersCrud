@@ -5,11 +5,11 @@ using Users.Business.Interfaces;
 
 namespace Users.Api.Controllers
 {
-    public class UserController : ControllerBase
+    public class UserController : BaseController
     {
         private readonly IUserService _service;
 
-        public UserController(IUserService service)
+        public UserController(IUserService service, INotifier notifier) : base(notifier)
         {
             _service = service;
         }
@@ -19,7 +19,7 @@ namespace Users.Api.Controllers
         {
             var users = _service.GetAll();
 
-            return Ok(users);
+            return Response(users);
         }
 
         [HttpGet, Route("api/users/{id:guid}")]
@@ -27,7 +27,7 @@ namespace Users.Api.Controllers
         {
             var user = _service.GetById(id);
 
-            return Ok(user);
+            return Response(user);
         }
 
         [HttpPost, Route("api/users")]
@@ -35,7 +35,7 @@ namespace Users.Api.Controllers
         {
             var user = _service.Create(userDto);
 
-            return Ok(user);
+            return Response(user);
         }
 
         [HttpPut, Route("api/users/{id:guid}")]
@@ -46,7 +46,7 @@ namespace Users.Api.Controllers
 
             var user = _service.Update(userDto);
 
-            return Ok(user);
+            return Response(user);
         }
 
         [HttpDelete, Route("api/users/{id:guid}")]
@@ -54,7 +54,7 @@ namespace Users.Api.Controllers
         {
             _service.Delete(id);
 
-            return NoContent();
+            return Response();
         }
     }
 }

@@ -4,11 +4,11 @@ using Users.Business.Interfaces;
 
 namespace Users.Api.Controllers
 {
-    public class LoginController : ControllerBase
+    public class LoginController : BaseController
     {
         private readonly ILoginService _loginService;
 
-        public LoginController(ILoginService loginService)
+        public LoginController(ILoginService loginService, INotifier notifier) : base(notifier)
         {
             _loginService = loginService;
         }
@@ -18,7 +18,7 @@ namespace Users.Api.Controllers
         {
             var token = _loginService.Authenticate(loginDto);
 
-            return Ok(token);
+            return Response(token);
         }
 
         [HttpPost, Route("api/validate")]
@@ -26,7 +26,7 @@ namespace Users.Api.Controllers
         {
             var user = _loginService.ValidateToken(token);
 
-            return Ok(user);
+            return Response(user);
         }
     }
 }

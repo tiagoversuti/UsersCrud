@@ -10,12 +10,14 @@ using Users.Business.Models;
 
 namespace Users.Business.Services
 {
-    public class LoginService : ILoginService
+    public class LoginService : BaseService, ILoginService
     {
         private readonly IConfiguration _configuration;
         private readonly IUserRepository _userRepository;
 
-        public LoginService(IConfiguration configuration, IUserRepository userRepository)
+        public LoginService(IConfiguration configuration,
+                            IUserRepository userRepository,
+                            INotifier notifier) : base(notifier)
         {
             _configuration = configuration;
             _userRepository = userRepository;
@@ -25,11 +27,11 @@ namespace Users.Business.Services
         {
             var user = _userRepository.GetByLogin(loginDto.Login);
 
-            if (user is null)
-                throw new ArgumentException("Invalid login or password.");
-
-            if (!user.ValidatePassword(loginDto.Password))
-                throw new ArgumentException("Invalid login or password.");
+            if (user is null || !user.ValidatePassword(loginDto.Password))
+            {
+                Notify("Invalid login or password.");
+                return null;
+            }
 
             return GenerateToken(user);
         }
@@ -38,7 +40,10 @@ namespace Users.Business.Services
         {
             var secret = _configuration.GetSection("Secret").Value;
             if (string.IsNullOrEmpty(secret))
-                throw new InvalidOperationException("Secret key missing.");
+            {
+                Notify("Secret key missing.");
+                return null;
+            }
 
             var payload = new Dictionary<string, object>
             {
@@ -60,13 +65,15 @@ namespace Users.Business.Services
         {
             if (string.IsNullOrEmpty(token))
             {
+                Notify("Token is missing.");
                 return null;
             }
 
             var secret = _configuration.GetSection("Secret").Value;
             if (string.IsNullOrWhiteSpace(secret))
             {
-                throw new InvalidOperationException("Secret key missing.");
+                Notify("Secret key missing.");
+                return null;
             }
 
             try
@@ -85,8 +92,11 @@ namespace Users.Business.Services
 
                 var user = _userRepository.GetById(id);
 
-                if (user.Login!= login)
+                if (user.Login != login)
+                {
+                    Notify("The informed login doesn't correspond with the user id.");
                     return null;
+                }
 
                 return new UserDto
                 {
@@ -95,8 +105,9 @@ namespace Users.Business.Services
                     Name = user.Name
                 };
             }
-            catch
+            catch (Exception e)
             {
+                Notify("An error has occurred: " + e.Message);
                 return null;
             }
         }

@@ -1,6 +1,6 @@
 ﻿namespace Users.Business
 {
-    public class Hash
+    public static class Hash
     {
         private const int HASH_WORK_FACTOR = 12;
 

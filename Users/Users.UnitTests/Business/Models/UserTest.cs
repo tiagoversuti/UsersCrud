@@ -1,6 +1,7 @@
 ﻿using FluentAssertions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
+using Users.Business;
 using Users.Business.Models;
 
 namespace Users.UnitTests.Business.Models
@@ -12,7 +13,7 @@ namespace Users.UnitTests.Business.Models
         public void ValidatePassword_WhenPasswordIsCorrect_ShouldReturnTrue()
         {
             //Arrange
-            var user = new User(Guid.NewGuid(), "Name", "Login", "Password");
+            var user = new User(Guid.NewGuid(), "Name", "Login", Hash.Generate("Password"));
             var password = "Password";
 
             //Act
@@ -26,7 +27,7 @@ namespace Users.UnitTests.Business.Models
         public void ValidatePassword_WhenPasswordIsIncorrect_ShouldReturnFalse()
         {
             //Arrange
-            var user = new User(Guid.NewGuid(), "Name", "Login", "Password");
+            var user = new User(Guid.NewGuid(), "Name", "Login", Hash.Generate("Password"));
             var password = "WrongPassword";
 
             //Act
@@ -40,7 +41,7 @@ namespace Users.UnitTests.Business.Models
         public void ChangePassword_ShouldChangePassword()
         {
             //Arrange
-            var user = new User(Guid.NewGuid(), "Name", "Login", "Password");
+            var user = new User(Guid.NewGuid(), "Name", "Login", Hash.Generate("Password"));
             var hashedPassword = user.Password;
             var newPassword = "NewPassword";
 
@@ -55,7 +56,7 @@ namespace Users.UnitTests.Business.Models
         public void ChangeName_ShouldChangeName()
         {
             //Arrange
-            var user = new User(Guid.NewGuid(), "Name", "Login", "Password");
+            var user = new User(Guid.NewGuid(), "Name", "Login", Hash.Generate("Password"));
             var name = "New Name";
 
             //Act
